@@ -1,0 +1,8 @@
+#!/bin/zsh
+n=1
+if [ $# -gt 0 ]; then
+	n="${1}"
+fi
+for x in $(seq ${n}); do
+	mpg123 -q -g200 $(dirname $0)/$(basename $0 .zsh).mp3
+done
