@@ -1,15 +1,15 @@
 PREFIX	=/opt
 BINDIR	=${PREFIX}/bin
+INSTALL	=install
 
-all:	beep beep.mp3
+all:	stbeep stbeep.mp3
 
-check:	beep beep.mp3
-	./beep
+check:	stbeep stbeep.mp3
+	./stbeep
 
-install: beep beep.mp3
-	install -d ${BINDIR}
-	install -c beep ${BINDIR}/
-	install -c -m 0644 beep.mp3 ${BINDIR}/
+install: stbeep stbeep.mp3
+	${INSTALL} -D stbeep ${BINDIR}/stbeep
+	${INSTALL} -D stbeep.mp3 ${BINDIR}/stbeep.mp3
 
 uninstall:
-	cd ${BINDIR} && ${RM} beep beep.mp3
+	cd ${BINDIR} && ${RM} stbeep stbeep.mp3
